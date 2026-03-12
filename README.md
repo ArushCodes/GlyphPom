@@ -6,29 +6,29 @@ GlyphPom combines the classic Pomodoro productivity technique with the high-cont
 
 ## ✨ Features (Powered by Hardware)
 
-* **Mathematical Pulse Sync:** During REST mode, the Glyph LEDs perform a "breathing" animation. The logic ensures that LED count updates only occur at the "trough" (the dimmest point) of the breath for a seamless visual experience.
-* **Glitch Mode (Hardcore):** Integrated with the accelerometer. If you pick up your phone during a focus session, the Glyph lights will "glitch." Failure to place the phone back down within the grace period resets your session.
-* **Wiggle to Peek:** While focused, the LEDs remain off to prevent distraction. Give the phone a small nudge to "peek" at your progress; the LEDs will fill and drain to show remaining time.
+* **Mathematical Pulse Sync:** During REST mode, the Glyph LEDs perform a "breathing" animation synced to the timer's progress.
+* **Glitch Mode (Hardcore):** Uses the accelerometer to detect phone movement. If you pick up your phone during focus, the Glyphs "glitch." Failure to put it back resets the session.
+* **Wiggle to Peek:** LEDs remain off to prevent distraction. Give the phone a small nudge to "peek" at your remaining time.
 * **Flip to Pause:** Uses the Z-axis sensor to intuitively pause and resume sessions based on phone orientation.
-* **Flow State:** A momentum-based mode where focus continues past 00:00 with a calm breathing animation for deep-work sessions.
+* **Flow State:** Momentum-based mode where focus continues past 00:00 with a calm breathing animation.
 
 ## 📸 App Walkthrough
 
-| **Ready Mode** | **Configuration** | **Active Focus** |
+| **Ready Mode** | **Active Focus** | **Rest Phase** |
 | :---: | :---: | :---: |
-| <img src="screenshots/2502.png" width="220"> | <img src="screenshots/2503.png" width="220"> | <img src="screenshots/2504.png" width="220"> |
-| *Wait for Flip-to-Start* | *Set your work/rest cycles* | *Minimalist timer UI* |
+| <img src="screenshots/2502.png" width="240"> | <img src="screenshots/2503.png" width="240"> | <img src="screenshots/2507.png" width="240"> |
+| *Wait for Flip-to-Start* | *Dot-matrix timer UI* | *Green accent rest mode* |
 
-| **Glitch Mode** | **Flow State** | **Session End** |
-| :---: | :---: | :---: |
-| <img src="screenshots/2505.png" width="220"> | <img src="screenshots/2506.png" width="220"> | <img src="screenshots/2507.png" width="220"> |
-| *Hardware-enforced focus* | *Deep focus tracking* | *Daily stats summary* |
+| **Configuration** | **Advanced Settings** |
+| :---: | :---: |
+| <img src="screenshots/2504.png" width="240"> | <img src="screenshots/2505.png" width="240"> |
+| *Set your work/rest cycles* | *Toggle hardware features* |
 
 ## 🏗 Technical Stack
 * **Language:** Kotlin
 * **Architecture:** Foreground Service for precise hardware lifecycle management.
 * **Hardware SDK:** Nothing Glyph Developer Kit (`com.nothing.ketchum`).
-* **UI:** Authentic N-Dot typography and 000000-black high-contrast design.
+* **UI:** Authentic N-Dot typography and 000000-black design.
 
 ## 🚀 Installation
 1. Go to the [Releases](https://github.com/ArushCodes/GlyphPom/releases) section of this repository.
