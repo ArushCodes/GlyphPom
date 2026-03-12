@@ -14,12 +14,12 @@ GlyphPom combines the classic Pomodoro productivity technique with the high-cont
 
 ## 📸 App Walkthrough
 
-| **Ready Mode** | **Active Focus** | **Rest Phase** |
+| **Ready Mode** | **Active Focus** | **Advanced Settings** |
 | :---: | :---: | :---: |
 | <img src="screenshots/2502.png" width="240"> | <img src="screenshots/2503.png" width="240"> | <img src="screenshots/2506.png" width="240"> |
 | *Wait for Flip-to-Start* | *Dot-matrix timer UI* | *Green accent rest mode* |
 
-| **Configuration** | **Advanced Settings** |
+| **Home Page** | **Rest Phase** |
 | :---: | :---: |
 | <img src="screenshots/2504.png" width="240"> | <img src="screenshots/2505.png" width="240"> |
 | *Set your work/rest cycles* | *Toggle hardware features* |
