@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="24dp">
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GlyphPom"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:fontFamily="@font/ndot"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:letterSpacing="0.05"/>
+
+            <ImageView
+                android:id="@+id/btnSettings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/ic_menu_manage"
+                app:tint="#AAAAAA"
+                android:padding="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/timerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvModeDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READY"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:fontFamily="@font/ndot"
+                android:letterSpacing="0.2"
+                android:includeFontPadding="false"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tvTimerDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#FFFFFF"
+                android:textSize="120sp"
+                android:fontFamily="@font/ndot"
+                android:includeFontPadding="false"
+                android:layout_marginVertical="0dp"/>
+
+            <TextView
+                android:id="@+id/tvHintDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#AAAAAA"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.05"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/tvCycleDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CYCLE: 0 / 0"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="32dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="40dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="WORK" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:textSize="11sp" android:letterSpacing="0.1"/>
+                    <EditText android:id="@+id/etWorkMinutes" android:layout_width="80dp" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:inputType="number" android:imeOptions="actionDone" android:textAlignment="center" android:textSize="28sp" android:fontFamily="@font/ndot" android:backgroundTint="#333333" android:padding="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="REST" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:textSize="11sp" android:letterSpacing="0.1"/>
+                    <EditText android:id="@+id/etRestMinutes" android:layout_width="80dp" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:inputType="number" android:imeOptions="actionDone" android:textAlignment="center" android:textSize="28sp" android:fontFamily="@font/ndot" android:backgroundTint="#333333" android:padding="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvCycleLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="CYCLES: 4" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:textSize="12sp" android:paddingStart="4dp" android:layout_marginBottom="4dp"/>
+            <SeekBar
+                android:id="@+id/sbCycles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="9"
+                android:progress="3"
+                android:splitTrack="false"
+                android:progressTint="#FFFFFF"
+                android:progressBackgroundTint="#333333"
+                android:thumbTint="#EA1111"
+                android:layout_marginBottom="32dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btnMainAction"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:text="START"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/ndot"
+                    android:backgroundTint="#FFFFFF"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="12dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"/>
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:text="STOP"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/ndot"
+                    android:backgroundTint="#EA1111"
+                    android:textColor="#FFFFFF"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDailyStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TODAY: 0 MINS | 0 SESSIONS"
+                android:textColor="#666666"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium"
+                android:textAlignment="center"
+                android:letterSpacing="0.05"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/settingsOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0A0A0A"
+        android:visibility="gone"
+        android:scrollbars="none"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="32dp"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIGURATION"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:fontFamily="@font/ndot"
+                android:layout_marginBottom="32dp"/>
+
+            <TextView android:id="@+id/tvReadyLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GET READY TIME: 3 SECS" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:textSize="12sp" android:paddingStart="8dp"/>
+            <SeekBar
+                android:id="@+id/sbReadyTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="12"
+                android:progress="0"
+                android:splitTrack="false"
+                android:progressTint="#FFFFFF"
+                android:progressBackgroundTint="#333333"
+                android:thumbTint="#EA1111"
+                android:layout_marginBottom="40dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="REST MODE VISUALS" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:layout_marginBottom="12dp" android:textSize="12sp"/>
+            <RadioGroup android:id="@+id/rgRestVisuals" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="32dp">
+                <RadioButton android:id="@+id/rbZen" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ZEN (PULSE)" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:buttonTint="#FFFFFF" android:padding="12dp" android:background="#141414" android:layout_marginBottom="4dp" android:textSize="14sp"/>
+                <RadioButton android:id="@+id/rbDeplete" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DEPLETE (SHRINK)" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:buttonTint="#FFFFFF" android:padding="12dp" android:background="#141414" android:layout_marginBottom="4dp" android:textSize="14sp"/>
+                <RadioButton android:id="@+id/rbBoth" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="BOTH (SYNCED)" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:buttonTint="#FFFFFF" android:padding="12dp" android:background="#141414" android:textSize="14sp"/>
+            </RadioGroup>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ADVANCED MODES" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:layout_marginBottom="12dp" android:textSize="12sp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="#141414" android:padding="16dp" android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="GLITCH MODE" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:textSize="14sp"/>
+                    <CheckBox android:id="@+id/swGlitchMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="#FFFFFF" android:layout_marginEnd="16dp"/>
+                    <ImageView android:id="@+id/infoGlitch" android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_dialog_info" app:tint="#888888"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="12dp" android:gravity="center_vertical">
+                    <EditText android:id="@+id/etGlitchGrace" android:layout_width="45dp" android:layout_height="wrap_content" android:textColor="#EA1111" android:inputType="number" android:imeOptions="actionDone" android:textSize="14sp" android:fontFamily="@font/ndot" android:backgroundTint="#333333" android:textAlignment="center"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SECS" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:textSize="10sp" android:layout_marginStart="4dp"/>
+                    <View android:layout_width="24dp" android:layout_height="1dp"/>
+                    <EditText android:id="@+id/etPickupLimit" android:layout_width="45dp" android:layout_height="wrap_content" android:textColor="#EA1111" android:inputType="number" android:imeOptions="actionDone" android:textSize="14sp" android:fontFamily="@font/ndot" android:backgroundTint="#333333" android:textAlignment="center"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PICKUPS" android:textColor="#888888" android:fontFamily="sans-serif-medium" android:textSize="10sp" android:layout_marginStart="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="#141414" android:padding="16dp" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="FLOW STATE" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:textSize="14sp"/>
+                <CheckBox android:id="@+id/swFlowState" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="#FFFFFF" android:layout_marginEnd="16dp"/>
+                <ImageView android:id="@+id/infoFlow" android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_dialog_info" app:tint="#888888"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="#141414" android:padding="16dp" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="WIGGLE TO PEEK" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:textSize="14sp"/>
+                <CheckBox android:id="@+id/swPeekMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="#FFFFFF" android:layout_marginEnd="16dp"/>
+                <ImageView android:id="@+id/infoPeek" android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_dialog_info" app:tint="#888888"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="#141414" android:padding="16dp" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="PHASE AUDIO" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:textSize="14sp"/>
+                <CheckBox android:id="@+id/swSound" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="#FFFFFF" android:layout_marginEnd="16dp"/>
+                <ImageView android:id="@+id/infoAudio" android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_dialog_info" app:tint="#888888"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="#141414" android:padding="16dp" android:gravity="center_vertical" android:layout_marginBottom="48dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="FLIP TO PAUSE" android:textColor="#FFFFFF" android:fontFamily="sans-serif-medium" android:textSize="14sp"/>
+                <CheckBox android:id="@+id/swFlipToPause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="#FFFFFF" android:layout_marginEnd="16dp"/>
+                <ImageView android:id="@+id/infoFlip" android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_dialog_info" app:tint="#888888"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnCloseSettings"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="SAVE"
+                android:textSize="18sp"
+                android:fontFamily="@font/ndot"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
